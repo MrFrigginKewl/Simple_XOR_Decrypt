@@ -10,22 +10,15 @@ Encrypted_Decimal_Values = []
 for i in MyHexEncrypted:
 	Encrypted_Decimal_Values.append(int(i,16))
 print (Encrypted_Decimal_Values)
-
-
 # loop through the HEX Values and convert them to Decimal.
 
 decrypted_values = []
 # create an empty list that will hold our decrypted values.
 
 # below is sample code that presents an alternative way to do this
-#for i in range(len(Encrypted_Decimal_Values)):
-#    decrypted_value = Encrypted_Decimal_Values[i] ^ ord(XOR_KEY[i])
-#    decrypted_values.append(decrypted_value)
-
-for position, value in enumerate(Encrypted_Decimal_Values):
-    decrypted_value = value ^ ord(XOR_KEY[position])
+for i in range(len(Encrypted_Decimal_Values)):
+    decrypted_value = Encrypted_Decimal_Values[i] ^ ord(XOR_KEY[i])
     decrypted_values.append(decrypted_value)
-    # XOR each encrypted decimal against the corresponding letter in our original XOR Key
 
 print("Decrypted Values Decimal:", decrypted_values)
 
